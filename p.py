@@ -1,5 +1,8 @@
 import speech_recognition as sr
 import importlib
+from pynput.keyboard import Key, Controller
+import time
+import os
 def rec1():
     r = sr.Recognizer()                                                                                   
     with sr.Microphone() as source:                                                                       
@@ -69,6 +72,18 @@ def rec1():
                 full_module_name = "webopener"
                 akrun = importlib.import_module(full_module_name)
                 akrun.webopener("gmail","")
+            elif(mess[i]=="File" or mess[i]=="file"):
+                print("file")
+                os.system('python file.py')
+            elif(mess[i]=="close"):
+                print("sdfsfvsgvds")
+                keyboard.press(Key.fn)
+                keyboard.press(Key.alt)
+                keyboard.press(Key.f4)
+                keyboard.release(Key.f4)
+                keyboard.release(Key.alt)
+                keyboard.release(Key.fn)
+                
     except:
         pass
 i=-1

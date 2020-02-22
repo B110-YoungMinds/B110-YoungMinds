@@ -14,7 +14,7 @@ def rec1():
         print(message.split())
         mess=message.split()
         for i in range(len(mess)):
-            if(mess[i]=="open"):
+            if(mess[i]=="open" or mess[i]=="launch" or mess[i]=="Launch"):
                 if(mess[i+1]=="YouTube" or mess[i+1]=="youtube" or mess[i+1]=="gmail" or mess[i+1]=="Gmail" ):
                     full_module_name = "webopener"
                     akrun = importlib.import_module(full_module_name)
@@ -76,14 +76,11 @@ def rec1():
                 print("file")
                 os.system('python file.py')
             elif(mess[i]=="close"):
-                print("sdfsfvsgvds")
-                keyboard.press(Key.fn)
-                keyboard.press(Key.alt)
-                keyboard.press(Key.f4)
-                keyboard.release(Key.f4)
-                keyboard.release(Key.alt)
-                keyboard.release(Key.fn)
-                
+                os.system('python close.py')
+            elif(mess[i]=="Shutdown" or mess[i]=="shutdown" or mess[i]=="lock" or mess[i]=="Lock" or mess[i]=="Restart" or mess[i]=="restart"):
+                full_module_name = "shut" 
+                akrun = importlib.import_module(full_module_name)                
+                akrun.wo(mess[i])
     except:
         pass
 i=-1
